@@ -1,0 +1,22 @@
+[
+  {
+    "deliveryID": "001",
+    "productName": "none",
+    "description": "two",
+    "location": "nairobi",
+    "dateCreated": "2024-06-10",
+    "personel": "john",
+    "dateDelivered": "",
+    "status": "Pending"
+  },
+  {
+    "deliveryID": "002",
+    "productName": "clothe",
+    "description": "10 pieces",
+    "location": "Bondo Town",
+    "dateCreated": "2024-06-10",
+    "personel": "DP001",
+    "dateDelivered": "",
+    "status": "Pending"
+  }
+]
