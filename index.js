@@ -17,9 +17,15 @@ app.get('/program', (req, res) => {
 
     if (program === 'delivery') {
         res.render('deliveryPersonel'); 
-    } else {
+    } 
+    else if(program === 'admin'){
+        
+        res.render('logisticManager');
+    }
+    else {
         res.status(404).send('Program not found');
     }
+
 });
 
 // Start the server
