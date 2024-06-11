@@ -1,1 +1,29 @@
-[]
+[
+ {
+  "personelID": "DP001",
+  "name": "John Paul",
+  "email": "Jp0829673@gmail.com",
+  "phone": "0746513049",
+  "dateJoined": "2024-06-11",
+  "password": "1234",
+  "status": "Pending"
+ },
+ {
+  "personelID": "DP002",
+  "name": "Kamau Ichungwa",
+  "email": "kimani@gmail.com",
+  "phone": "0756231489",
+  "dateJoined": "2024-06-11",
+  "password": "5678",
+  "status": "Pending"
+ },
+ {
+    "personelID": "DP003",
+    "name": "Imani Ichungwa",
+    "email": "imani@gmail.com",
+    "phone": "0756258489",
+    "dateJoined": "2024-06-12",
+    "password": "5678",
+    "status": "Pending"
+   }
+]

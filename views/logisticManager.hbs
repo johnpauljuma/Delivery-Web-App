@@ -31,20 +31,58 @@
 
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
+
+  <style>
+    .footer-top {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    }
+
+    .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+    }
+
+    .row {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+    }
+
+    .social-links a {
+        margin-right: 10px;
+        color: white; /* Change to your desired color */
+        text-decoration: none;
+    }
+
+    .copyright {
+        flex-grow: 1;
+        text-align: center;
+    }
+
+    .credits {
+        text-align: center;
+    }
+
+  </style>
 </head>
 
 <body>
 
   <!-- ======= Header ======= -->
-  <header id="header" class="fixed-top d-flex align-items-center">
+  <header id="header" class="fixed-top d-flex align-items-center text-bg-success">
     <div class="container d-flex align-items-center">
-      <h1 class="logo me-auto"><a style="color: rgb(57, 57, 184);" href="#">Dispatchify</a></h1>
+      <h1 class="logo me-auto"><a style="color: rgb(248, 248, 253);" href="#">Dispatchify</a></h1>
 
       <nav id="navbar" class="navbar">
         <ul>
-          <li><button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#delivery"><b>Deliveries</b></button></li>
-          <li class="ms-3"><button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#personelModal"><b>Personels</b></button></li>
-          <li class="ms-3"><button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#signinModal"><b>Delivery History</b></button></li>
+          <li><button type="button" class="btn text-white" data-bs-toggle="modal" data-bs-target="#delivery"><b>Deliveries</b></button></li>
+          <li class="ms-3"><button type="button" class="btn text-white" data-bs-toggle="modal" data-bs-target="#personelModal"><b>Personels</b></button></li>
+          
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav>
@@ -53,205 +91,289 @@
 
   <!-- ======= Hero Section ======= -->
   <section id="hero">
-    <div class="col-12 text-white p-5">
+    <div class="col-12 text-dark bg-light p-5" style="height: 70%;">
       <h1>Available Deliveries</h1>
     </div>
   </section>
 
   <main id="main">
-    <!-- Deliveries Modal -->
-    <div class="modal fade" id="delivery" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="deliveryLabel" aria-hidden="true">
-      <div class="modal-dialog modal-fullscreen">
-        <div class="modal-content bg-white text-dark">
-          <div class="modal-header text-bg-success">
-            <h1 class="modal-title fs-5" id="deliveryLabel"><b>Dispatchify</b></h1>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div class="modal-body">
-            <div class="card text-bg-light" style="border-radius: 1rem;">
-              <div class="card-header align-items-center d-flex">
-                <h4 class="card-title mb-0 flex-grow-1"><b>Deliveries</b></h4>
-                <div class="flex-shrink-0">
-                  <button type="button" class="btn btn-soft-info btn-sm btn-success" data-bs-toggle="modal" data-bs-target="#newDelivery">
-                    <i class="ri-file-list-3-line align-middle"></i> <b>New Delivery</b>
-                  </button>
-                </div>
-              </div>
-              <div class="card-body p-4 text-center">
-                <table class="table table-hover table-success table-striped" id="delivriesTable">
-                  <thead class="table-light">
-                    <tr>
-                      <th scope="col">Delivery ID</th>
-                      <th scope="col">Product Name</th>
-                      <th scope="col">Description</th>
-                      <th scope="col">Location</th>
-                      <th scope="col">Date Created</th>
-                      <th scope="col">Personel</th>
-                      <th scope="col">Date Delivered</th>
-                      <th scope="col">Status</th>
-                      <th scope="col">Action</th>
-                    </tr>
-                  </thead>
-                  <tbody class="table-group-divider">
-                    {{#each deliveries}}
-                    <tr>
-                        <td>{{ this.deliveryID }}</td>
-                        <td>{{ this.productName }}</td>
-                        <td>{{ this.description }}</td>
-                        <td>{{ this.location }}</td>
-                        <td>{{ this.dateCreated }}</td>
-                        <td>{{ this.personel }}</td>
-                        <td>{{ this.dateDelivered }}</td>
-                        <td>{{ this.status }}</td>
-                        <td>
-                            <button class="btn btn-primary">Edit</button>
-                            <button class="btn btn-primary">Delete</button>
-                        </td>
-                    </tr>
-                    {{/each}}
-
-                  </tbody>
-                </table>
-              </div>
+        <!-- Deliveries Modal -->
+        <div class="modal fade" id="delivery" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="deliveryLabel" aria-hidden="true">
+        <div class="modal-dialog modal-fullscreen">
+            <div class="modal-content bg-white text-dark">
+            <div class="modal-header text-bg-success">
+                <h1 class="modal-title fs-5" id="deliveryLabel"><b>Dispatchify</b></h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Personel Modal -->
-    <div class="modal fade" id="personelModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="personelLabel" aria-hidden="true">
-      <div class="modal-dialog modal-fullscreen">
-        <div class="modal-content bg-white text-dark">
-          <div class="modal-header text-bg-success">
-            <h1 class="modal-title fs-5" id="personelLabel"><b>Dispatchify</b></h1>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div class="modal-body">
-            <div class="card text-bg-light" style="border-radius: 1rem;">
-              <div class="card-header align-items-center d-flex">
-                <h4 class="card-title mb-0 flex-grow-1"><b>Personels</b></h4>
-                <div class="flex-shrink-0">
-                  <button type="button" class="btn btn-soft-info btn-sm">
-                    <i class="ri-file-list-3-line align-middle"></i> <b>Add Personel</b>
-                  </button>
+            <div class="modal-body">
+                <div class="card text-bg-light" style="border-radius: 1rem;">
+                <div class="card-header align-items-center d-flex">
+                    <h4 class="card-title mb-0 flex-grow-1"><b>Deliveries</b></h4>
+                    <div class="flex-shrink-0">
+                    <button type="button" class="btn btn-soft-info btn-sm btn-success" data-bs-toggle="modal" data-bs-target="#newDelivery">
+                        <i class="ri-file-list-3-line align-middle"></i> <b>New Delivery</b>
+                    </button>
+                    </div>
                 </div>
-              </div>
-              <div class="card-body p-4 text-center">
-                <table class="table table-hover table-success table-striped">
-                  <thead class="table-light">
-                    <tr>
-                      <th scope="col">#</th>
-                      <th scope="col">First</th>
-                      <th scope="col">Last</th>
-                      <th scope="col">Handle</th>
-                    </tr>
-                  </thead>
-                  <tbody class="table-group-divider">
-                    <!-- Add rows dynamically with JavaScript or server-side rendering -->
-                  </tbody>
-                </table>
-              </div>
-            </div>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          </div>
-        </div>
-      </div>
-    </div>
+                <div class="card-body p-4 text-center">
+                    <table class="table table-hover table-success table-striped" id="delivriesTable">
+                    <thead class="table-light">
+                        <tr>
+                        <th scope="col">Delivery ID</th>
+                        <th scope="col">Product Name</th>
+                        <th scope="col">Description</th>
+                        <th scope="col">Location</th>
+                        <th scope="col">Date Created</th>
+                        <th scope="col">Personel</th>
+                        <th scope="col">Date Delivered</th>
+                        <th scope="col">Status</th>
+                        <th scope="col">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody class="table-group-divider">
+                        {{#each deliveries}}
+                        <tr>
+                            <td>{{ this.deliveryID }}</td>
+                            <td>{{ this.productName }}</td>
+                            <td>{{ this.description }}</td>
+                            <td>{{ this.location }}</td>
+                            <td>{{ this.dateCreated }}</td>
+                            <td>{{ this.personel }}</td>
+                            <td>{{ this.dateDelivered }}</td>
+                            <td>{{ this.status }}</td>
+                            <td>
+                                <button class="btn btn-primary">Edit</button>
+                                <button class="btn btn-primary">Delete</button>
+                            </td>
+                        </tr>
+                        {{/each}}
 
-    <!-- New Delivery Modal -->
-    <div class="modal fade" id="newDelivery" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="newDeliveryLabel" aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content bg-white text-dark">
-          <div class="modal-header text-bg-success">
-            <h1 class="modal-title fs-5" id="newDeliveryLabel"><b>Dispatchify</b></h1>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div class="modal-body">
-            <div class="row">
-              <div class="col-xl-12">
-                <div class="card">
-                  <div class="card-header">
-                    <h6 class="card-title mb-0"><b>Create New Delivery</b></h6>
-                  </div>
-                  <div class="card-body">
-                    <form id="deliveryForm" action="/new-delivery" method="post">
-                      <div class="row">
-                        <div class="mb-3 col-6">
-                          <input type="text" class="form-control" name="deliveryID" placeholder="Delivery ID" required>
-                        </div>
-                        <div class="mb-3 col-6">
-                          <input type="text" class="form-control" name="productName" placeholder="Product Name" required>
-                        </div>
-                      </div>
-                      <div class="row">
-                        <div class="mb-3 col-6">
-                          <input type="text" class="form-control" name="description" placeholder="Description" required>
-                        </div>
-                        <div class="mb-3 col-6">
-                          <input type="text" class="form-control" name="location" placeholder="Location" required>
-                        </div>
-                      </div>
-                      <div class="row">
-                        <div class="mb-3 col-6">
-                          <input type="date" class="form-control" name="dateCreated" placeholder="Date Created" required>
-                        </div>
-                        <div class="mb-3 col-6">
-                          <input type="text" class="form-control" name="personel" placeholder="Personel ID" required>
-                        </div>
-                      </div>
-                      <button type="submit" class="btn btn-primary" style="float: right;">Create</button>
-                    </form>
-                  </div>
+                    </tbody>
+                    </table>
                 </div>
-              </div>
+                </div>
             </div>
-          </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+            </div>
         </div>
-      </div>
-    </div>
+        </div>
 
-    <!-- Success Alert -->
-    <div id="success-alert" class="alert alert-success alert-dismissible fade show" role="alert" style="display: none;">
-      New delivery created successfully!
-      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-    </div>
+        <!-- Personel Modal -->
+        <div class="modal fade" id="personelModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="personelLabel" aria-hidden="true">
+        <div class="modal-dialog modal-fullscreen">
+            <div class="modal-content bg-white text-dark">
+            <div class="modal-header text-bg-success">
+                <h1 class="modal-title fs-5" id="personelLabel"><b>Dispatchify</b></h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="card text-bg-light" style="border-radius: 1rem;">
+                <div class="card-header align-items-center d-flex">
+                    <h4 class="card-title mb-0 flex-grow-1"><b>Personels</b></h4>
+                    <div class="flex-shrink-0">
+                    <button type="button" class="btn btn-soft-info btn-sm btn-success" data-bs-toggle="modal" data-bs-target="#newPersonel">
+                        <i class="ri-file-list-3-line align-middle"></i> <b>New Personel</b>
+                    </button>
+                    </div>
+                </div>
+                <div class="card-body p-4 text-center">
+                    <table class="table table-hover table-success table-striped">
+                    <thead class="table-light">
+                        <tr>
+                        <th scope="col">Personel ID</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">Phone</th>
+                        <th scope="col">Date Joined</th>
+                        <th scope="col">Status</th>
+                        <th scope="col">Action</th>                    
+                        </tr>
+                    </thead>
+                    <tbody class="table-group-divider">
+                        {{#each personels}}
+                        <tr>
+                            <td>{{ this.personelID }}</td>
+                            <td>{{ this.name }}</td>
+                            <td>{{ this.email }}</td>
+                            <td>{{ this.phone }}</td>
+                            <td>{{ this.dateJoined }}</td>
+                            <td>{{ this.status }}</td>
+                            <td>
+                                <button class="btn btn-primary">Edit</button>
+                                <button class="btn btn-primary">Delete</button>
+                            </td>
+                        </tr>
+                        {{/each}}
+
+                    </tbody>
+                    </table>
+                </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+            </div>
+        </div>
+        </div>
+
+        <!-- New Delivery Modal -->
+        <div class="modal fade" id="newDelivery" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="newDeliveryLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content bg-white text-dark">
+            <div class="modal-header text-bg-success">
+                <h1 class="modal-title fs-5" id="newDeliveryLabel"><b>Dispatchify</b></h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                <div class="col-xl-12">
+                    <div class="card">
+                    <div class="card-header">
+                        <h6 class="card-title mb-0"><b>Create New Delivery</b></h6>
+                    </div>
+                    <div class="card-body">
+                        <form id="deliveryForm" action="/new-delivery" method="post">
+                        <div class="row">
+                            <div class="mb-3 col-6">
+                                <label class="form-label ms-2">Delivery ID</label>
+                                <input type="text" class="form-control" name="deliveryID" placeholder="Delivery ID" required>
+                            </div>
+                            <div class="mb-3 col-6">
+                                <label class="form-label ms-2">Product Name</label>
+                                <input type="text" class="form-control" name="productName" placeholder="Product Name" required>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="mb-3 col-6">
+                                <label class="form-label ms-2">Description</label>
+                                <input type="text" class="form-control" name="description" placeholder="Description" required>
+                            </div>
+                            <div class="mb-3 col-6">
+                                <label class="form-label ms-2">Location</label>
+                                <input type="text" class="form-control" name="location" placeholder="Location" required>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="mb-3 col-6">
+                                <label class="form-label ms-2">Date</label>
+                                <input type="date" class="form-control" name="dateCreated" placeholder="Date Created" required>
+                            </div>
+                            <div class="mb-3 col-6">
+                                <label class="form-label ms-2">Assigned To:</label>
+                                <input type="text" class="form-control" name="personel" placeholder="Personel ID" required>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-primary" style="float: right;">Create</button>
+                        </form>
+                    </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+            </div>
+        </div>
+        </div>
+
+        <!-- New Personel Modal -->
+        <div class="modal fade" id="newPersonel" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="newDeliveryLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content bg-white text-dark">
+            <div class="modal-header text-bg-success">
+                <h1 class="modal-title fs-5" id="newDeliveryLabel"><b>Dispatchify</b></h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                <div class="col-xl-12">
+                    <div class="card">
+                    <div class="card-header">
+                        <h6 class="card-title mb-0"><b>Enter New Personel Details</b></h6>
+                    </div>
+                    <div class="card-body">
+                        <form id="deliveryForm" action="/new-personel" method="post">
+                        <div class="row">
+                            <div class="mb-3 col-6">
+                                <label class="form-label ms-2">Personel ID</label>
+                                <input type="text" class="form-control" name="personelID" placeholder="Enter employee id" required>
+                            </div>
+                            <div class="mb-3 col-6">
+                                <label class="form-label ms-2">Name</label>
+                                <input type="text" class="form-control" name="name" placeholder="Full name" required>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="mb-3 col-6">
+                                <label class="form-label ms-2">Email</label>
+                                <input type="email" class="form-control" name="email" placeholder="Enter email" required>
+                            </div>
+                            <div class="mb-3 col-6">
+                                <label class="form-label ms-2">Phone</label>
+                                <input type="text" class="form-control" name="phone" placeholder="Phone number" required>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="mb-3 col-4">
+                                <label class="form-label ms-2">Date</label>
+                                <input type="date" class="form-control" name="dateJoined" placeholder="Date joined" required>
+                            </div>
+                            <div class="mb-3 col-4">
+                                <label class="form-label ms-2">Password</label>
+                                <input type="text" class="form-control" name="password" placeholder="Enter password" required>
+                            </div>
+                            <div class="mb-3 col-4">
+                                <label class="form-label ms-2">Confirm Password</label>
+                                <input type="text" class="form-control" name="confirmPassword" placeholder="Renter password" required>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-primary" style="float: right;">Add</button>
+                        </form>
+                    </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+            </div>
+        </div>
+        </div>
+
+        
+        <!-- Success Alert -->
+        <div id="success-alert" class="alert alert-success alert-dismissible fade show" role="alert" style="display: none;">
+        New delivery created successfully!
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
   </main>
 
   <!-- ======= Footer ======= -->
   <footer id="footer">
-    <div class="footer-top">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-3 col-md-6">
-            <div class="footer-info">
-              <div class="social-links mt-3">
-                <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
-                <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
-                <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
-                <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
-                <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
-              </div>
+    <div class="footer-top" style=" padding: 1px">
+        <div class="container ms-1 mb-0 ps-3 pb-2" style="height:; padding:0">
+            <div class="row align-items-center" style="; display: flex; justify-content: space-between;">
+                <div class="col-lg-3 col-md-6 col-3" style="height:2em">
+                    <div class="footer-info">
+                        <div class="social-links" style="display: flex; margin: bottom 0;">
+                            <a href="#" class="twitter" style="margin-right: 10px;"><i class="bx bxl-twitter"></i></a>
+                            <a href="#" class="facebook" style="margin-right: 10px;"><i class="bx bxl-facebook"></i></a>
+                            <a href="#" class="instagram" style="margin-right: 10px;"><i class="bx bxl-instagram"></i></a>
+                            <a href="#" class="google-plus" style="margin-right: 10px;"><i class="bx bxl-skype"></i></a>
+                            <a href="#" class="linkedin" style="margin-right: 10px;"><i class="bx bxl-linkedin"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6 col-9 text-center" style="padding: 1px margin-top:0">
+                    <div class="copyright" >
+                        &copy; Copyright <strong><span>Dispatchify</span></strong>. All Rights Reserved
+                    </div>
+                    
+                </div>
             </div>
-          </div>
         </div>
-      </div>
     </div>
+</footer>
 
-    <div class="container">
-      <div class="copyright">
-        &copy; Copyright <strong><span>Dispatchify</span></strong>. All Rights Reserved
-      </div>
-      <div class="credits">
-        Designed by <a href="https://github.com/johnpauljuma">#jpdesigns</a>
-      </div>
-    </div>
-  </footer>
 
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
@@ -267,39 +389,49 @@
   <script src="assets/js/main.js"></script>
 
   <script>
-    document.addEventListener('DOMContentLoaded', (event) => {
-      // Get the modals
-      var deliveryModal = new bootstrap.Modal(document.getElementById('delivery'));
-      var newDeliveryModal = new bootstrap.Modal(document.getElementById('newDelivery'));
+        document.addEventListener('DOMContentLoaded', (event) => {
+            // Get the modals
+            var deliveryModal = new bootstrap.Modal(document.getElementById('delivery'));
+            var newDeliveryModal = new bootstrap.Modal(document.getElementById('newDelivery'));
+            var deliveryModal = new bootstrap.Modal(document.getElementById('personelModal'));
+            var newDeliveryModal = new bootstrap.Modal(document.getElementById('newPersonel'));
 
-      // Event listener for showing the newDelivery modal
-      document.getElementById('newDelivery').addEventListener('show.bs.modal', function (event) {
-        deliveryModal.hide();
-      });
+            // Event listener for showing the newDelivery modal
+            document.getElementById('newDelivery').addEventListener('show.bs.modal', function (event) {
+            deliveryModal.hide();
+            });
 
-      // Event listener for hiding the newDelivery modal
-      document.getElementById('newDelivery').addEventListener('hidden.bs.modal', function (event) {
-        deliveryModal.show();
-      });
+            // Event listener for hiding the newDelivery modal
+            document.getElementById('newDelivery').addEventListener('hidden.bs.modal', function (event) {
+            deliveryModal.show();
+            });
 
-      // Handle URL success parameter and alert display
-      const urlParams = new URLSearchParams(window.location.search);
-      if (urlParams.has('success')) {
-        const successAlert = document.getElementById('success-alert');
-        successAlert.style.display = 'block';
+            // Event listener for showing the newPersonel modal
+            document.getElementById('newPersonel').addEventListener('show.bs.modal', function (event) {
+            deliveryModal.hide();
+            });
 
-        // Show the modal again
-        newDeliveryModal.show();
+            // Event listener for hiding the newDelivery modal
+            document.getElementById('newPersonel').addEventListener('hidden.bs.modal', function (event) {
+            deliveryModal.show();
+            });
 
-        // Reset form data
-        document.getElementById('deliveryForm').reset();
+            // Handle URL success parameter and alert display
+            const urlParams = new URLSearchParams(window.location.search);
+            if (urlParams.has('success')) {
+                const successAlert = document.getElementById('success-alert');
+                successAlert.style.display = 'block';
 
-        // Remove the success parameter from the URL
-        window.history.replaceState({}, document.title, window.location.pathname);
-      }
-    });
+                // Show the modal again
+                newDeliveryModal.show();
 
-    
+                // Reset form data
+                document.getElementById('deliveryForm').reset();
+
+                // Remove the success parameter from the URL
+                window.history.replaceState({}, document.title, window.location.pathname);
+            }
+        });
   </script>
 
 </body>
