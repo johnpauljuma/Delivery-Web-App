@@ -18,12 +18,21 @@
   "status": "Pending"
  },
  {
-    "personelID": "DP003",
-    "name": "Imani Ichungwa",
-    "email": "imani@gmail.com",
-    "phone": "0756258489",
-    "dateJoined": "2024-06-12",
-    "password": "5678",
-    "status": "Pending"
-   }
+  "personelID": "DP003",
+  "name": "Imani Ichungwa",
+  "email": "imani@gmail.com",
+  "phone": "0756258489",
+  "dateJoined": "2024-06-12",
+  "password": "5678",
+  "status": "Pending"
+ },
+ {
+  "personelID": "DP004",
+  "name": "Jacky G",
+  "email": "jacky@gmail.com",
+  "phone": "0789563214",
+  "dateJoined": "2024-06-11",
+  "password": "1234",
+  "status": "Pending"
+ }
 ]

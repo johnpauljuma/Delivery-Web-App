@@ -1,8 +1,8 @@
 [
   {
     "deliveryID": "001",
-    "productName": "none",
-    "description": "two",
+    "productName": "Shoes",
+    "description": "Two pairs",
     "location": "nairobi",
     "dateCreated": "2024-06-10",
     "personel": "john",
@@ -11,11 +11,61 @@
   },
   {
     "deliveryID": "002",
-    "productName": "clothe",
+    "productName": "Clothe",
     "description": "10 pieces",
     "location": "Bondo Town",
     "dateCreated": "2024-06-10",
     "personel": "DP001",
+    "dateDelivered": "",
+    "status": "Pending"
+  },
+  {
+    "deliveryID": "003",
+    "productName": "Food",
+    "description": "Snack",
+    "location": "Kasarani",
+    "dateCreated": "2024-06-11",
+    "personel": "DP005",
+    "dateDelivered": "",
+    "status": "Pending"
+  },
+  {
+    "deliveryID": "005",
+    "productName": "Bag",
+    "description": "Ten pieces",
+    "location": "USIU",
+    "dateCreated": "2024-06-11",
+    "personel": "DP001",
+    "dateDelivered": "",
+    "status": "Pending"
+  },
+  {
+    "deliveryID": "004",
+    "productName": "Parse",
+    "description": "20 pieces",
+    "location": "USIU",
+    "dateCreated": "2024-06-11",
+    "personel": "DP002",
+    "dateDelivered": "",
+    "status": "Pending"
+  },
+  {
+    "deliveryID": "006",
+    "productName": "Food",
+    "description": "Snack",
+    "location": "Kasarani",
+    "dateCreated": "2024-06-11",
+    "personel": "DP005",
+    "dateDelivered": "",
+    "status": "Pending"
+  },
+  {
+    "deliveryID": "456",
+    "productName": "none",
+    "description": "two",
+    "location": "nairobi",
+    "dateCreated": "2024-06-11",
+    "personel": "Melissa",
     "dateDelivered": "",
     "status": "Pending"
   }
