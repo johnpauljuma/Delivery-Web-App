@@ -124,7 +124,7 @@
 
                   <h3 class="mb-5">Sign in</h3>
 
-                  <div class="form-outline mb-3">
+                  <div class="form-outline mb-3" >
                       <label class="form-label">Email</label>
                       <input type="text" class="form-control form-control-lg bg-dark text-white" autocomplete="off" placeholder="Enter username"/>
                   </div>
@@ -140,8 +140,8 @@
                   <label class="form-check-label ms-3" for="form1Example3"> Remember password </label>
                   </div>
 
-                  <button class="btn btn-primary btn-lg btn-block" style="width: 100%;" type="submit">
-                    <a href="/program?program=delivery" class="text-white text-decoration-none">Login</a></button>
+                  <button class="btn btn-primary btn-lg btn-block" style="width: 100%;" type="submit" method="POST">
+                    <a href="/program?program=delivery" class="text-white text-decoration-none" >Login</a></button>
 
                   <hr class="my-4">         
 
@@ -167,7 +167,7 @@
           </div>
           <div class="modal-body">
                               
-            <form>
+            <form method="post">
               <div class="mb-3">
                 <label for="exampleInputEmail1" class="form-label">Admin Username</label>
                 <input type="text" class="form-control" id="exampleInputEmail1" value="" aria-describedby="emailHelp">
