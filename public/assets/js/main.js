@@ -183,3 +183,26 @@
   }
 
 })()
+
+document.getElementById('loginForm').addEventListener('submit', async e=>{
+  e.preventDefault();
+  const adminUser = document.getElementById('adminUser').value
+  const adminPassword = document.getElementById('adminPassword').value
+
+  const response = await fetch('/login',{
+    method:'POST',
+    headers:{
+      'Content-Type': 'application/json'
+    },
+    body:JSON.stringify({adminUser,adminPassword})
+  })
+
+  const data = await response.json()
+  if(response.status == 200){
+    alert(data.message)
+  }
+  else{
+    alert(data.message)
+  }
+
+})

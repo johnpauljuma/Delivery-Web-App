@@ -1,0 +1,43 @@
+{
+    "users": [
+      {
+        "id":"1",
+        "name": "John",
+        "usertype": "LogisticsManager",
+        "role": "Admin",
+        "password": "546"
+      },
+
+      {
+        "id":"2",
+        "name": "Lissa",
+        "usertype": "LogisticsManager",
+        "role": "Admin",
+        "password": "654"
+      },
+
+      {
+        "id":"3",
+        "name": "Ezekiel",
+        "usertype": "DeliveryPersonnel",
+        "role": "User",
+        "password": "456"
+      },
+
+      {
+        "id":"4",
+        "name": "Jack",
+        "usertype": "DeliveryPersonnel",
+        "role": "User",
+        "password": "231"
+      },
+
+      {
+        "id":"5",
+        "name": "Paul",
+        "usertype": "DeliveryPersonnel",
+        "role": "User",
+        "password": "321"
+      }
+    ]
+  }

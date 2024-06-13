@@ -124,7 +124,7 @@
 
                   <h3 class="mb-5">Sign in</h3>
 
-                  <form method="post" >
+                  <form action="/deliveryPersonel.hbs" method="post" >
                     <div class="form-outline mb-3" >
                         <label class="form-label">Email</label>
                         <input type="text" class="form-control form-control-lg bg-dark text-white" autocomplete="off" placeholder="email" required="true"/>
@@ -140,11 +140,15 @@
                     <input class="form-check-input" type="checkbox" value="" id="form1Example3" />
                     <label class="form-check-label ms-3" for="form1Example3"> Remember password </label>
                     </div>
+                    
+                    {{#if messages.error}}
+                      {{messages.error}}
+                    {{/if}}
 
                     <button class="btn btn-primary btn-lg btn-block" style="width: 100%;" type="submit" >
                   </form>
 
-                    <a href="/?program=delivery" class="text-white text-decoration-none" >Login</a></button>
+                    <a href="/program?program=delivery" class="text-white text-decoration-none" >Login</a></button>
 
                   <hr class="my-4">         
 
@@ -170,15 +174,19 @@
           </div>
           <div class="modal-body">
                               
-            <form method="post">
+            <form id="loginForm">
               <div class="mb-3">
-                <label for="exampleInputEmail1" class="form-label">Admin Username</label>
-                <input type="text" class="form-control" id="exampleInputEmail1" value="" aria-describedby="emailHelp" required="true" placeholder="username">
+                <label for="adminUser" class="form-label">Admin Username</label>
+                <input type="text" class="form-control" id="adminUser" value="" aria-describedby="emailHelp" required="true" placeholder="username">
               </div>
               <div class="mb-3">
-                <label for="exampleInputPassword1" class="form-label" required="true" >Password</label>
-                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="password">
+                <label for="adminPassword" class="form-label" required="true" >Password</label>
+                <input type="password" class="form-control" id="adminPassword" placeholder="password">
               </div>
+              
+              {{#if messages.error}}
+                {{messages.error}}
+              {{/if}}
               
               <button type="submit" class="btn btn-primary" style="width: 100%;">Login</button>
             </form>
@@ -236,7 +244,9 @@
   <script src="assets/vendor/php-email-form/validate.js"></script>
 
   <!-- Template Main JS File -->
-  <script src="assets/js/main.js"></script>
+  <script type="module" src="assets/js/main.js"></script>
+  {{!--  --}}
+  <script type="module" src="/Delivery-Web-App/index.js"></script>
 
 </body>
 
