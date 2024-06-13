@@ -124,24 +124,27 @@
 
                   <h3 class="mb-5">Sign in</h3>
 
-                  <div class="form-outline mb-3" >
-                      <label class="form-label">Email</label>
-                      <input type="text" class="form-control form-control-lg bg-dark text-white" autocomplete="off" placeholder="Enter username"/>
-                  </div>
-                  
-                  <div class="form-outline mb-3">
-                      <label class="form-label">Password</label>
-                      <input type="password" class="form-control form-control-lg bg-dark text-white" autocomplete="off" placeholder="Enter password"/>
-                  </div>
+                  <form method="post" >
+                    <div class="form-outline mb-3" >
+                        <label class="form-label">Email</label>
+                        <input type="text" class="form-control form-control-lg bg-dark text-white" autocomplete="off" placeholder="email" required="true"/>
+                    </div>
+                    
+                    <div class="form-outline mb-3">
+                        <label class="form-label">Password</label>
+                        <input type="password" class="form-control form-control-lg bg-dark text-white" autocomplete="off" placeholder="password" required="true"/>
+                    </div>
 
-                  <!-- Checkbox -->
-                  <div class="form-check d-flex justify-content-start mb-3">
-                  <input class="form-check-input" type="checkbox" value="" id="form1Example3" />
-                  <label class="form-check-label ms-3" for="form1Example3"> Remember password </label>
-                  </div>
+                    <!-- Checkbox -->
+                    <div class="form-check d-flex justify-content-start mb-3">
+                    <input class="form-check-input" type="checkbox" value="" id="form1Example3" />
+                    <label class="form-check-label ms-3" for="form1Example3"> Remember password </label>
+                    </div>
 
-                  <button class="btn btn-primary btn-lg btn-block" style="width: 100%;" type="submit" method="POST">
-                    <a href="/program?program=delivery" class="text-white text-decoration-none" >Login</a></button>
+                    <button class="btn btn-primary btn-lg btn-block" style="width: 100%;" type="submit" >
+                  </form>
+
+                    <a href="/?program=delivery" class="text-white text-decoration-none" >Login</a></button>
 
                   <hr class="my-4">         
 
@@ -170,11 +173,11 @@
             <form method="post">
               <div class="mb-3">
                 <label for="exampleInputEmail1" class="form-label">Admin Username</label>
-                <input type="text" class="form-control" id="exampleInputEmail1" value="" aria-describedby="emailHelp">
+                <input type="text" class="form-control" id="exampleInputEmail1" value="" aria-describedby="emailHelp" required="true" placeholder="username">
               </div>
               <div class="mb-3">
-                <label for="exampleInputPassword1" class="form-label">Password</label>
-                <input type="password" class="form-control" id="exampleInputPassword1">
+                <label for="exampleInputPassword1" class="form-label" required="true" >Password</label>
+                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="password">
               </div>
               
               <button type="submit" class="btn btn-primary" style="width: 100%;">Login</button>

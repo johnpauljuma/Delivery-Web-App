@@ -5,15 +5,12 @@ if (process.env.NODE_ENV !== 'production') {
 const express = require('express');
 const app = express();
 const bcrypt = require('bcrypt');
-const path = require('path');
 const passport = require('passport');
 const flash = require('express-flash');
 const session = require('express-session');
 const methodOverride = require('method-override')
 
-
 const port = 3001;
-// const SESSION_SECRET = 'secret';
 
 const initializePassport = require('./passport-config');
 initializePassport(
@@ -22,13 +19,20 @@ initializePassport(
     id => users.find(user => user.id === id)
 );
 
-const users = [];
-
+const users = [
+    {
+        "id": 20240613,
+        "name": "zeke",
+        "email": "eadwera@usiu.ac.ke",
+        "password": "1234"
+      }
+];
 
 // Setting up the view engine and static files
 app.set('views', 'views');
 app.set('view engine', 'hbs');
 app.use(express.static('public'));
+// 
 app.use(express.urlencoded({ extended: false }));
 app.use(flash());
 app.use(session({
@@ -40,19 +44,18 @@ app.use(passport.initialize());
 app.use(passport.session());
 app.use(methodOverride('_method'));
 
-
 // Home route
 app.get('/', checkAuthenticated, (request, response) => {
     response.render('home');
 });
 
-// login logic  
+// login routes  
 app.get('/login', checkNotAuthenticated, (req, res) => {
-
+    res.render('home');
 });
 
 app.post('/login', checkNotAuthenticated, passport.authenticate('local', {
-    successRedirect: '/',
+    successRedirect: '/deliveryPersonel',
     failureRedirect: '/login',
     failureFlash: true
 
@@ -84,14 +87,31 @@ app.post('/register', checkNotAuthenticated, async (req, res) => {
 app.delete('/logout', (req, res) => {
     req.logout();
     res.redirect('/');
-})
+});
 
+app.get('/program', (req, res) => {
+    const program = req.query.program; 
+
+    if (program === 'delivery') {
+        res.render('deliveryPersonel'); 
+    } 
+    else if(program === 'admin'){
+        
+        res.render('logisticManager');
+    }
+    else {
+        res.status(404).send('Program not found');
+    }
+
+});
+
+// authentication check functions
 function checkAuthenticated(req, res, next) {
     if (req.isAuthenticated()){
         return next();
     }
 
-    res.redirect('/login');
+    res.redirect('/');
 }
 
 function checkNotAuthenticated(req, res, next) {
