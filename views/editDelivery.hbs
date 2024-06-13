@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Delivery</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body style="background-color: rgb(21, 31, 131); color:white">
+    <div class="container mt-2 col-5" >
+        <h1 class="mb-4">Edit Delivery</h1>
+        <form action="/edit-delivery/{{ delivery.deliveryID }}" method="POST">
+            <div class="form-group">
+                <label for="productName">Product Name:</label>
+                <input type="text" class="form-control" id="productName" name="productName" value="{{ delivery.productName }}" required>
+            </div>
+            <div class="form-group">
+                <label for="description">Description:</label>
+                <textarea class="form-control" id="description" name="description" rows="4" required>{{ delivery.description }}</textarea>
+            </div>
+            <div class="form-group">
+                <label for="location">Location:</label>
+                <input type="text" class="form-control" id="location" name="location" value="{{ delivery.location }}" required>
+            </div>
+            <div class="form-group">
+                <label for="dateCreated">Date Created:</label>
+                <input type="date" class="form-control" id="dateCreated" name="dateCreated" value="{{ delivery.dateCreated }}" required>
+            </div>
+            <div class="form-group">
+                <label for="personel">Personel:</label>
+                <input type="text" class="form-control" id="personel" name="personel" value="{{ delivery.personel }}" required>
+            </div>
+            <button type="submit" class="btn btn-primary float-right">Update Delivery</button>
+        </form>
+    </div>
+    <!-- Bootstrap JS, Popper.js, and jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.6.0/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

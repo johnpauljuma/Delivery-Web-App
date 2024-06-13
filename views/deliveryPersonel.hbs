@@ -64,21 +64,25 @@
         <h3 class="fw-bold text-center mt-3 mb-3 text-dark">Available Deliveries</h3>
         <div class="row mt-2 mb-3">
             {{#each deliveries}}
-                <div class="col-md-3 mb-3">
+                <div class="col-md-3 mb-3 card-container" id="delivery-card-{{this.deliveryID}}" data-delivery-id="{{this.deliveryID}}">
                     <div class="card">
-                      <div class="card-header text-center" style="background-color: orangered;">
-                        <h5 class="card-title"><b>{{this.productName}}</b></h5>
-                      </div>
-                        <div class="card-body" style="background-color: rgb(245, 203, 126);">                      
+                        <div class="card-header text-center" style="background-color: orangered;">
+                            <h5 class="card-title"><b>{{this.productName}}</b></h5>
+                        </div>
+                        <div class="card-body" style="background-color: rgb(245, 203, 126);">
                             <p class="card-text text-dark">Delivery ID: {{this.deliveryID}}</p>
                             <p class="card-text text-dark">Description: {{this.description}}</p>
                             <p class="card-text text-dark">Location: {{this.location}}</p>
                             <p class="card-text text-dark">Date Created: {{this.dateCreated}}</p>
-                            <p class="card-text text-dark">Personnel: {{this.personel}}</p>                            
-                        </div>                        
-                          <div class="card-footer d-flex justify-content-between">
-                            <button class="btn text-white" style="background-color: rgb(21, 21, 131);">Deliver</button>
-                            <button class="btn btn-secondary">Cancel</button>                        
+                            <p class="card-text text-dark">Personnel: {{this.personel}}</p>
+                        </div>
+                        <div class="card-footer d-flex justify-content-between">
+                            {{#if isDelivered}}
+                                <button class="btn text-white deliver-btn" data-id="{{this.deliveryID}}" style="background-color: rgb(21, 21, 131);">Delivered</button>
+                            {{else}}
+                                <button class="btn text-white deliver-btn" data-id="{{this.deliveryID}}" style="background-color: rgb(21, 21, 131);">Mark as Delivered</button>
+                            {{/if}}
+                            <button class="btn btn-secondary close-btn" data-id="{{this.deliveryID}}">Close</button>
                         </div>
                     </div>
                 </div>
@@ -86,6 +90,8 @@
         </div>
     </div>
 </section><!-- End Hero -->
+
+<!-- End Hero -->
 
   <main id="main">
     <!-- Sign In Modal -->
@@ -97,74 +103,36 @@
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body bg-light">
-            <div class="card   text-bg-secondary" style="border-radius: 1rem;">
-              <div class="card-header" style="background-color: orangered;"><h3>Delivery History</h3></div>
+            <div class="card text-bg-light" style="border-radius: 1rem;">
+              <div class="card-header" ><h3>Delivery History</h3></div>
             <div class="card-body p-4 text-center bg-white" style="border-radius:">
               
               <table class="table table-hover table-warning  table-striped">
                 <thead class="table-light">
-                  <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">First</th>
-                    <th scope="col">Last</th>
-                    <th scope="col">Handle</th>
+                  <tr >
+                    <th scope="col" style="color:orangered">Delivery ID</th>
+                    <th scope="col" style="color:orangered">Product Name</th>
+                    <th scope="col" style="color:orangered">Description</th>
+                    <th scope="col" style="color:orangered">Location</th>
+                    <th scope="col" style="color:orangered">Date Created</th>
+                    <th scope="col" style="color:orangered">Date Delivered</th>
+                    <th scope="col" style="color:orangered">Status</th>
+                   
                   </tr>
                 </thead>
                 <tbody class="table-group-divider">
-                  <tr>
-                    <th scope="row">1</th>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>@mdo</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">2</th>
-                    <td>Jacob</td>
-                    <td>Thornton</td>
-                    <td>@fat</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">3</th>
-                    <td >Larry the Bird</td>
-                    <td>Bird</td>
-                    <td>@twitter</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">1</th>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>@mdo</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">2</th>
-                    <td>Jacob</td>
-                    <td>Thornton</td>
-                    <td>@fat</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">3</th>
-                    <td>Larry the Bird</td>
-                    <td>Bird</td>
-                    <td>@twitter</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">1</th>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>@mdo</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">2</th>
-                    <td>Jacob</td>
-                    <td>Thornton</td>
-                    <td>@fat</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">3</th>
-                    <td >Larry the Bird</td>
-                    <td>Bird</td>
-                    <td>@twitter</td>
-                  </tr>
+                  {{#each deliveries}}
+                    <tr>
+                        <td>{{ this.deliveryID }}</td>
+                        <td>{{ this.productName }}</td>
+                        <td>{{ this.description }}</td>
+                        <td>{{ this.location }}</td>
+                        <td>{{ this.dateCreated }}</td>
+                        <td>{{ this.dateDelivered }}</td>
+                        <td>{{ this.status }}</td>
+                        
+                    </tr>
+                  {{/each}}
                 </tbody>
               </table>                
 
@@ -224,6 +192,79 @@
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
 
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+      document.querySelectorAll('.deliver-btn').forEach(button => {
+        button.addEventListener('click', function() {
+          const deliveryID = this.getAttribute('data-id');
+
+          fetch(`/deliver/${deliveryID}`, {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json'
+            }
+          })
+          .then(response => response.json())
+          .then(data => {
+            if (data.success) {
+              // Change the button text to "Delivered"
+              this.textContent = 'Delivered';
+              this.disabled = true;
+
+              // Update the delivery history table dynamically
+              const tableBody = document.getElementById('delivery-history-body');
+              const newRow = document.createElement('tr');
+              newRow.innerHTML = `
+                <td>${data.delivery.deliveryID}</td>
+                <td>${data.delivery.productName}</td>
+                <td>${data.delivery.description}</td>
+                <td>${data.delivery.location}</td>
+                <td>${data.delivery.dateCreated}</td>
+                <td>${data.delivery.dateDelivered}</td>
+                <td>${data.delivery.status}</td>
+                <td>
+                  <button class="btn text-white" style="background-color: rgb(21, 21, 131);">Edit</button>
+                  <button class="btn btn-secondary">Delete</button>
+                </td>
+              `;
+              tableBody.appendChild(newRow);
+            } else {
+              console.error('Failed to deliver the item');
+            }
+          })
+          .catch(error => {
+            console.error('Error:', error);
+          });
+        });
+      });
+
+      document.querySelectorAll('.close-btn').forEach(button => {
+        button.addEventListener('click', function() {
+          const deliveryID = this.getAttribute('data-id');
+          const card = document.getElementById(`delivery-card-${deliveryID}`);
+          if (card) card.remove();
+        });
+      });
+    });
+
+    function updateDateTime() {
+      const now = new Date();
+      const dateTimeString = now.toLocaleString('en-GB', {
+        weekday: 'long',
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric',
+        hour: '2-digit',
+        minute: '2-digit',
+        second: '2-digit'
+      });
+      document.getElementById('currentDateTime').innerText = dateTimeString;
+    }
+
+    updateDateTime();
+    setInterval(updateDateTime, 1000);
+  </script>
 </body>
 
 </html>

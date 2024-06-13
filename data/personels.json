@@ -1,38 +1,46 @@
 [
- {
-  "personelID": "DP001",
-  "name": "John Paul",
-  "email": "Jp0829673@gmail.com",
-  "phone": "0746513049",
-  "dateJoined": "2024-06-11",
-  "password": "1234",
-  "status": "Pending"
- },
- {
-  "personelID": "DP002",
-  "name": "Kamau Ichungwa",
-  "email": "kimani@gmail.com",
-  "phone": "0756231489",
-  "dateJoined": "2024-06-11",
-  "password": "5678",
-  "status": "Pending"
- },
- {
-  "personelID": "DP003",
-  "name": "Imani Ichungwa",
-  "email": "imani@gmail.com",
-  "phone": "0756258489",
-  "dateJoined": "2024-06-12",
-  "password": "5678",
-  "status": "Pending"
- },
- {
-  "personelID": "DP004",
-  "name": "Jacky G",
-  "email": "jacky@gmail.com",
-  "phone": "0789563214",
-  "dateJoined": "2024-06-11",
-  "password": "1234",
-  "status": "Pending"
- }
+  {
+    "personelID": "DP002",
+    "name": "Kamau Ichungwa",
+    "email": "kimani@gmail.com",
+    "phone": "0756231489",
+    "dateJoined": "2024-06-11",
+    "status": "Pending"
+  },
+  {
+    "personelID": "DP003",
+    "name": "Imani Ichungwa",
+    "email": "imani@gmail.com",
+    "phone": "0756258489",
+    "dateJoined": "2024-06-12",
+    "password": "5678",
+    "status": "Pending"
+  },
+  {
+    "personelID": "DP004",
+    "name": "Jacky G",
+    "email": "jacky@gmail.com",
+    "phone": "0789563214",
+    "dateJoined": "2024-06-11",
+    "password": "1234",
+    "status": "Pending"
+  },
+  {
+    "personelID": "DP005",
+    "name": "John Paul",
+    "email": "Jp0829673@gmail.com",
+    "phone": "0746513049",
+    "dateJoined": "2024-06-13",
+    "password": "1234",
+    "status": "Pending"
+  },
+  {
+    "personelID": "DP001",
+    "name": "John Paul",
+    "email": "Jp0829673@gmail.com",
+    "phone": "0746513049",
+    "dateJoined": "2024-06-14",
+    "password": "1234",
+    "status": "Pending"
+  }
 ]
