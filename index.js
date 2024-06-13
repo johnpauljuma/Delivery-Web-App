@@ -28,7 +28,7 @@ console.log(userData);
 
 // console.log(data.users[0].id)
 
-const port = 3001;
+const port = 3000;
 
 // const initializePassport = require('./passport-config');
 // initializePassport(
