@@ -100,7 +100,7 @@
       <nav id="navbar" class="navbar">
         <ul>
           <li><button type="button" class="btn text-white" style="background-color: orangered;" data-bs-toggle="modal" data-bs-target="#delivery"><b>Deliveries</b></button></li>
-          <li class="ms-3"><button type="button" class="btn text-white" style="background-color: orangered;" data-bs-toggle="modal" data-bs-target="#personelModal"><b>Personels</b></button></li>
+          <li class="ms-3"><button type="button" class="btn text-white" style="background-color: orangered;" data-bs-toggle="modal" data-bs-target="#personelModal"><b>Personnels</b></button></li>
           <li class="ms-3"><a class="btn text-white fw-bold text-center"  href="/logout">Logout</a></li>
           
           
@@ -150,7 +150,7 @@
                         <th scope="col" style="color:orangered">Description</th>
                         <th scope="col" style="color:orangered">Location</th>
                         <th scope="col" style="color:orangered">Date Created</th>
-                        <th scope="col" style="color:orangered">Personel</th>
+                        <th scope="col" style="color:orangered">Personnel</th>
                         <th scope="col" style="color:orangered">Date Delivered</th>
                         <th scope="col" style="color:orangered">Status</th>
                         <th scope="col" style="color:orangered">Action</th>
@@ -197,10 +197,10 @@
             <div class="modal-body">
                 <div class="card text-bg-light" style="border-radius: 1rem;">
                 <div class="card-header align-items-center d-flex">
-                    <h4 class="card-title mb-0 flex-grow-1"><b>Personels</b></h4>
+                    <h4 class="card-title mb-0 flex-grow-1"><b>Personnels</b></h4>
                     <div class="flex-shrink-0">
                     <button type="button" class="btn btn-soft-info btn-sm text-white" style="background-color: rgb(21, 21, 131);" data-bs-toggle="modal" data-bs-target="#newPersonel">
-                        <i class="ri-file-list-3-line align-middle"></i> <b>New Personel</b>
+                        <i class="ri-file-list-3-line align-middle"></i> <b>New Personnel</b>
                     </button>
                     </div>
                 </div>
@@ -208,7 +208,7 @@
                     <table class="table table-hover table-warning table-striped">
                     <thead class="table-light">
                         <tr>
-                        <th scope="col" style="color:orangered">Personel ID</th>
+                        <th scope="col" style="color:orangered">Personnel ID</th>
                         <th scope="col" style="color:orangered">Name</th>
                         <th scope="col" style="color:orangered">Email</th>
                         <th scope="col" style="color:orangered">Phone</th>
@@ -290,7 +290,7 @@
                             </div>
                             <div class="mb-3 col-6">
                                 <label class="form-label ms-2">Assigned To:</label>
-                                <input type="text" class="form-control" name="personel" placeholder="Personel ID" required>
+                                <input type="text" class="form-control" name="personel" placeholder="Personnel ID" required>
                             </div>
                         </div>
                         <button type="submit" class="btn text-white" style="float: right; background-color:rgb(21, 21, 131)">Create</button>
@@ -304,7 +304,7 @@
         </div>
         </div>
 
-        <!-- New Personel Modal -->
+        <!-- New Personnel Modal -->
         <div class="modal fade" id="newPersonel" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="newDeliveryLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg">
             <div class="modal-content bg-white text-dark">
@@ -317,13 +317,13 @@
                 <div class="col-xl-12">
                     <div class="card">
                     <div class="card-header">
-                        <h6 class="card-title mb-0"><b>Enter New Personel Details</b></h6>
+                        <h6 class="card-title mb-0"><b>Enter New Personnel Details</b></h6>
                     </div>
                     <div class="card-body">
                         <form id="deliveryForm" action="/new-personel" method="post">
                         <div class="row">
                             <div class="mb-3 col-6">
-                                <label class="form-label ms-2">Personel ID</label>
+                                <label class="form-label ms-2">Personnel ID</label>
                                 <input type="text" class="form-control" name="personelID" placeholder="Enter employee id" required>
                             </div>
                             <div class="mb-3 col-6">

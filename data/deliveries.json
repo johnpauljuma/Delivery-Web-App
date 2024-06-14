@@ -16,7 +16,7 @@
     "location": "Kasarani",
     "dateCreated": "2024-06-11",
     "personel": "DP001",
-    "dateDelivered": "2024-06-13",
+    "dateDelivered": "2024-06-14",
     "status": "Delivered"
   },
   {
@@ -96,8 +96,8 @@
     "location": "nairobi",
     "dateCreated": "2024-06-13",
     "personel": "DP001",
-    "dateDelivered": "",
-    "status": "Pending"
+    "dateDelivered": "2024-06-13",
+    "status": "Delivered"
   },
   {
     "deliveryID": "998",
@@ -106,7 +106,7 @@
     "location": "Kasarani",
     "dateCreated": "2024-06-13",
     "personel": "DP001",
-    "dateDelivered": "",
-    "status": "Pending"
+    "dateDelivered": "2024-06-13",
+    "status": "Delivered"
   }
 ]

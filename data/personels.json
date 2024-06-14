@@ -42,5 +42,14 @@
     "dateJoined": "2024-06-14",
     "password": "1234",
     "status": "Pending"
+  },
+  {
+    "personelID": "500",
+    "name": "John Paul",
+    "email": "Jp0829673@gmail.com",
+    "phone": "0746513049",
+    "dateJoined": "2024-06-14",
+    "password": "1234",
+    "status": "Pending"
   }
 ]

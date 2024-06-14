@@ -253,7 +253,7 @@ app.post('/deliver/:deliveryID', isAuthenticated('delivery'), (req, res) => {
 });
 
 //deletion of a delivery
-app.delete('/delete-delivery/:deliveryID', isAuthenticated('admin', 'delivery'), (req, res) => {
+app.delete('/delete-delivery/:deliveryID', isAuthenticated('admin'), (req, res) => {
     const deliveryID = req.params.deliveryID;
 
     const deliveriesFilePath = path.join(__dirname, 'data', 'deliveries.json');
